@@ -1,0 +1,215 @@
+* {
+  scroll-behavior: smooth;
+  box-sizing: border-box;
+}
+
+/** Set default font and color palette.
+* NOTE: :root selector represents the root element usually it is the html element
+*/
+:root {
+  font-family: "Domine", serif;
+  font-size: 16pt;
+  font-optical-sizing: auto;
+  --primary: #1E2798;
+  --secondary: #00827c;
+  --bg-color: #01142a;
+  --fg-color: #99eeff;
+}
+
+:is(h1, h2, p::first-letter()) {
+  text-transform: capitalize;
+}
+
+h1 {
+  text-shadow: var(--secondary) 2px 3px;
+}
+
+li {
+  list-style: square;
+}
+
+a {
+  color: var(--secondary);
+}
+
+body {
+  margin: 0;
+  background: var(--bg-color);
+  color: var(--fg-color);
+  /* Display the body as grid */
+  display: grid;
+  grid-template-rows: 1fr 12fr 1fr;
+  height: 100vh;
+}
+
+main {
+  padding: 0 2.4rem;
+  overflow: scroll;
+}
+
+header {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  align-items: stretch;
+  background: var(--primary);
+  color: var(--fg-color);
+  gap: 1rem;
+  padding: 0 1rem;
+  text-transform: capitalize;
+}
+
+header h1 {
+  align-self: center;
+}
+
+header img {
+  height: 32px;
+  align-self: center;
+}
+
+header * {
+  margin: 0;
+}
+
+nav {
+  flex: 1;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  padding: .6rem;
+  margin: 0;
+}
+
+
+nav li {
+  height: 100%;
+  display: flex;
+  list-style: none;
+}
+
+nav li a {
+  flex: 1;
+  align-content: center;
+  padding: 0 1.2rem;
+  border-radius: 5px;
+  text-decoration: none;
+  color: inherit;
+  cursor: pointer;
+}
+
+nav li a:hover {
+  text-decoration: none;
+  animation: pulse 1s infinite;
+}
+
+footer {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  background: var(--primary);
+  color: var(--fg-color);
+  align-items: center;
+  padding: .6rem 1.2rem;
+}
+
+footer #contact-me {
+  flex: 1;
+}
+
+footer #contact-me ul {
+  margin: 0;
+}
+
+footer #contact-me ul li {
+  list-style: none;
+}
+
+footer #contact-me ul li a {
+  text-decoration: none;
+  color: inherit;
+  padding: 1rem;
+  animation: pulse 3s infinite
+}
+
+#top-button {
+  padding: 1rem;
+  text-decoration: none;
+  color: inherit;
+  animation: pulse 5s infinite;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  padding: 0 20vw;
+  gap: 1rem;
+  margin-top: 1rem;
+}
+
+form :is(input, textarea) {
+  appearance: none;
+  width: 100%;
+  border-radius: 5px;
+  border: 2pt var(--secondary) solid;
+  padding: .5rem;
+  background: var(--primary);
+  color: var(--fg-color);
+}
+
+form textarea {
+  height: 30vh;
+}
+
+#submit {
+  width: 20%;
+  margin-left: 80%;
+}
+
+.projects {
+  display: grid;
+  grid-template-areas: "pb ."
+    ". xo";
+  gap: 5rem;
+}
+
+:is(project1, project2) {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.project1 {
+  grid-area: pb;
+}
+
+.project2 {
+  grid-area: xo;
+}
+
+@keyframes pulse {
+  0% {
+    background: inherit;
+  }
+
+  50% {
+    background: var(--secondary)
+  }
+
+  100% {
+    background: inherit;
+  }
+}
+
+.form-error{
+  color:red;
+  display:block;
+}
+
+#greeting{
+  text-align: center;
+  display: block;
+  margin: 1rem 0 0 0;
+  font-size: 3rem;
+}
